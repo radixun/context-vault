@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+<title id="title">Context Vault</title>
+<desc id="desc">Local project memory. Read less. Keep what matters.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#171c2b"/><stop offset="1" stop-color="#242637"/></linearGradient>
+  <linearGradient id="page" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8bdff"/><stop offset="1" stop-color="#8d7aca"/></linearGradient>
+</defs>
+<rect width="1280" height="520" rx="28" fill="url(#bg)"/>
+<circle cx="1120" cy="70" r="220" fill="#a28dd7" opacity=".05"/>
+<circle cx="1160" cy="410" r="285" fill="#98d6cb" opacity=".04"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">
+  <rect x="70" y="70" width="192" height="32" rx="16" fill="#313549"/>
+  <circle cx="90" cy="86" r="4" fill="#a0dac8"/>
+  <text x="105" y="92" fill="#cdd3e3" font-size="14" letter-spacing="1.4">LOCAL MARKDOWN</text>
+  <text x="68" y="213" fill="#f4f2fa" font-size="76" font-weight="650" letter-spacing="-3">Context Vault</text>
+  <text x="72" y="274" fill="#c9c7d9" font-size="29">Project memory for the next task.</text>
+  <text x="72" y="326" fill="#969bb0" font-size="23">Read less. Keep what matters.</text>
+  <path d="M72 375 H650" stroke="#44485b"/>
+  <text x="72" y="421" fill="#d3cced" font-size="17">MANIFESTS</text>
+  <circle cx="213" cy="415" r="2" fill="#777d95"/>
+  <text x="235" y="421" fill="#d3cced" font-size="17">DECISIONS</text>
+  <circle cx="369" cy="415" r="2" fill="#777d95"/>
+  <text x="391" y="421" fill="#d3cced" font-size="17">DAILY LOGS</text>
+</g>
+<g transform="translate(860 93)">
+  <rect x="43" y="11" width="209" height="279" rx="17" fill="#535268" transform="rotate(10 148 150)"/>
+  <rect x="9" y="34" width="209" height="279" rx="17" fill="#79718f" transform="rotate(-7 113 170)"/>
+  <rect x="0" y="45" width="209" height="279" rx="17" fill="url(#page)"/>
+  <path d="M36 86 H126 M36 108 H169" stroke="#514577" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+  <rect x="31" y="150" width="148" height="124" rx="10" fill="#e4ddff" opacity=".45"/>
+  <circle cx="56" cy="178" r="6" fill="#514577"/>
+  <path d="M76 178 H151 M56 201 V238 H77 M56 213 H77 M93 213 H151 M93 238 H135" stroke="#514577" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="188" cy="315" r="30" fill="#a0dac8"/>
+  <path d="M175 315 l9 9 17-19" fill="none" stroke="#294d48" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

@@ -1,0 +1,195 @@
+{
+  "system": "context-vault",
+  "schema_version": 2,
+  "policy_version": "1.0.0",
+  "canonical_policy": "50_System/Codex_Instructions.md",
+  "project_current_truth": "10_Projects/<project-slug>/Memory_Manifest.md",
+  "project_routing": "50_System/project-routing.json",
+  "infrastructure": [
+    ".obsidian/**",
+    "50_System/**",
+    "AGENTS.md",
+    "README.md",
+    "Welcome.md"
+  ],
+  "user_content_roots": [
+    "00_Inbox/",
+    "10_Projects/",
+    "20_Areas/",
+    "30_Resources/",
+    "40_Archive/",
+    "60_Sessions/",
+    "70_Decisions/"
+  ],
+  "note_types": {
+    "common": {
+      "required": [
+        "type",
+        "status",
+        "created",
+        "updated",
+        "tags",
+        "summary"
+      ],
+      "nonempty": [
+        "type",
+        "status",
+        "created",
+        "updated"
+      ],
+      "date_fields": [
+        "created",
+        "updated",
+        "last_verified"
+      ]
+    },
+    "project": {
+      "required": [
+        "project"
+      ],
+      "exact_type": "project",
+      "accepted_types": [
+        "project"
+      ],
+      "status_values": [
+        "active",
+        "paused",
+        "archived"
+      ],
+      "nonempty": [
+        "project"
+      ]
+    },
+    "manifest": {
+      "required": [
+        "project"
+      ],
+      "exact_type": "manifest",
+      "accepted_types": [
+        "manifest",
+        "project",
+        "memory-manifest"
+      ],
+      "status_values": [
+        "active",
+        "paused",
+        "archived"
+      ],
+      "nonempty": [
+        "project"
+      ]
+    },
+    "session": {
+      "required": [
+        "project"
+      ],
+      "exact_type": "session",
+      "accepted_types": [
+        "session",
+        "session-log",
+        "daily-log"
+      ],
+      "status_values": [
+        "active",
+        "done",
+        "archived"
+      ],
+      "status_aliases": {
+        "complete": "done"
+      },
+      "nonempty": [
+        "project"
+      ]
+    },
+    "decision": {
+      "required": [
+        "project"
+      ],
+      "exact_type": "decision",
+      "accepted_types": [
+        "decision"
+      ],
+      "status_values": [
+        "proposed",
+        "accepted",
+        "rejected",
+        "completed",
+        "superseded",
+        "archived"
+      ],
+      "status_aliases": {
+        "active": "accepted",
+        "done": "completed"
+      },
+      "nonempty": [
+        "project"
+      ]
+    }
+  },
+  "path_rules": [
+    {
+      "glob": "10_Projects/*/Memory_Manifest.md",
+      "note_type": "manifest",
+      "max_chars": 16000,
+      "size_severity": "WARN"
+    },
+    {
+      "glob": "60_Sessions/*/*.md",
+      "note_type": "session",
+      "max_chars": 12000,
+      "size_severity": "INFO"
+    },
+    {
+      "glob": "70_Decisions/*.md",
+      "note_type": "decision",
+      "max_chars": 12000,
+      "size_severity": "INFO"
+    },
+    {
+      "glob": "50_System/Codex_Instructions.md",
+      "note_type": "common",
+      "max_chars": 16000,
+      "size_severity": "WARN"
+    },
+    {
+      "glob": "50_System/Indexes/*.md",
+      "note_type": "common",
+      "max_chars": 12000,
+      "size_severity": "WARN"
+    }
+  ],
+  "indexes": {
+    "global": "50_System/Indexes/Global_Memory_Manifest.md",
+    "project": "50_System/Indexes/Project_Index.md",
+    "decision": "50_System/Indexes/Decision_Index.md",
+    "session": "50_System/Indexes/Session_Index.md",
+    "master": "50_System/Indexes/Master_Index.md",
+    "generator": "50_System/Scripts/generate_indexes.py"
+  },
+  "freshness": {
+    "field_order": [
+      "last_verified",
+      "updated"
+    ],
+    "stale_after_days": 30
+  },
+  "validation": {
+    "mode": "warn",
+    "baseline": "50_System/Audit_Baseline.json",
+    "session_project_sentinels": [
+      "_general",
+      "_unassigned"
+    ],
+    "allowed_legacy_session_roots": [],
+    "write_guard": "50_System/Scripts/guard_vault_write.py",
+    "write_guard_receipt": "outside-vault",
+    "ignore_markdown": [
+      "AGENTS.md",
+      "README.md",
+      "Welcome.md",
+      ".obsidian/**",
+      ".stversions/**",
+      "**/*.sync-conflict-*"
+    ]
+  }
+}

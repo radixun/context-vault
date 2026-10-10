@@ -1,0 +1,8 @@
+{
+  "system": "context-vault",
+  "schema_version": 1,
+  "captured": "2026-10-10",
+  "mode": "legacy-debt-ratchet",
+  "counts": {},
+  "note": "No ERROR or WARN findings are allowed."
+}
