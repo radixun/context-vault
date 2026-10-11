@@ -51,7 +51,9 @@ and activate your first project.
 | Python tools | Routing, revision checks, daily logs and audits |
 
 Tested on macOS. Linux installation is available but not verified for this
-release. Windows installation is not supported. Codex hook trust requires a
+release. Windows installation is not supported. The file tools include Windows
+locks and daily-log names; this does not prove Windows installation or hook
+acceptance. Codex hook trust requires a
 user review; other harness adapters are not tested.
 
 Context Vault has no network service. Your coding agent may send the notes it

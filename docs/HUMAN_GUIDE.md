@@ -9,6 +9,8 @@ No Python packages, account, server or community plugin are required.
 Use macOS or Linux with Python 3.10 or later. The release is tested on macOS.
 Linux uses the same file tools, but this release has no Linux acceptance result.
 Windows installation is not supported in this release.
+The file tools include Windows locks and daily-log names. This support is
+separate from installation and native hook acceptance.
 
 ```sh
 git clone https://github.com/radixun/context-vault.git

@@ -7,7 +7,10 @@ Use clear, short English sentences. Keep technical identifiers correct.
 Do not add user notes, credentials, machine names, local paths, chat transcripts
 or runtime files to this repository. Use synthetic test data only.
 The `vault/` directory is a distribution template, not a personal memory store.
-Do not activate memory in this checkout. Install a separate private Vault.
+Do not use the template as personal memory. Install a separate private Vault.
+An external private Vault can hold project memory for this checkout only when
+its resolver returns an active manifest or the user requests activation.
+Never put that private manifest or its notes in this repository.
 
 Keep `vault/50_System/Scripts` as the source for the system tools. Keep the
 metadata parser and validator copies in `skill/scripts` byte-identical.

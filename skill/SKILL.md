@@ -42,6 +42,9 @@ python3 @TOOLS@/guard_vault_write.py commit --vault @VAULT_SHELL@ --receipt /out
 
 A stale receipt must fail. Re-read and reconcile; never force the replacement.
 Local locks cover cooperating tools. They do not lock a text editor.
+The file tools use POSIX locks on macOS and Linux, and file locks on Windows.
+Windows does not support POSIX directory `fsync`. Use one writer across
+synchronized hosts; a local lock does not lock a remote copy.
 
 Record one compact daily entry for every active-project task, including
 read-only tasks. State the task, result, changed files and next step. Prepare
@@ -53,6 +56,10 @@ python3 @TOOLS@/append_vault_session.py --vault @VAULT_SHELL@ --project example 
 
 The helper creates `60_Sessions/example/YYYY-MM-DD.md`. An exact repeated
 entry is a no-op. Use the actual active slug instead of `example`.
+Use `--host mac`, `--host linux` or `--host windows` for the named host type.
+Linux and Windows entries use `YYYY-MM-DD--linux.md` and
+`YYYY-MM-DD--windows.md`. The `local` and `mac` options use `YYYY-MM-DD.md`.
+File-tool support does not imply installer or hook support on that platform.
 
 ## Validate
 
@@ -83,6 +90,10 @@ python3 @TOOLS@/vault-audit.py --vault-path @VAULT_SHELL@ --ratchet --summary
 Require zero ERROR and WARN findings. Never raise the baseline to hide debt.
 Mechanical validation does not prove that a fact is true. Set `last_verified`
 only after a semantic review. Reconcile known copies of changed facts.
+Do not reset that date from file age, a successful write or an index check.
+If a source is unavailable, record the limit. Keep old runtime results dated;
+do not turn them into current acceptance. Update priorities and reading routes
+when a workspace, service or owner source changes.
 
 ## Complete
 
